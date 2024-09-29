@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title>Book of Mormon Reading Program Helper</title>
+  <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+  <h1><u>Book of Mormon</u> Reading Program</h1>
+  <form onsubmit="onSubmit(event)">
+  <fieldset>
+    <label for="startDate">Start Date:</label>
+    <input id="startDate" type="date" required />
+
+    <label for="endDate">End Date:</label>
+    <input id="endDate" type="date" required />
+
+   <input type="submit" value="Submit"/>
+  </fieldset>
+  </form>
+  
+  <section id="results">
+  </section>
+
+  <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+fieldset {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+input[type="date"] {
+  flex: 1;
+}
+
+#results {
+  white-space: pre-line;
+}
