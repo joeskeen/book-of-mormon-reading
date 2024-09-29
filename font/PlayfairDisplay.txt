@@ -1,0 +1,3 @@
+The Playfair Display font was downloaded from https://www.1001freefonts.com/serif-fonts.php
+where it was listed as a "Public domain, GPL, OFL" font. The font was created by Claus Eggers Sørensen.
+It was converted to a web font using https://transfonter.org/

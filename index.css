@@ -1,12 +1,68 @@
+html {
+  font-size: 40px;
+}
+
+* {
+  font-family: 'Playfair Display', 'Times New Roman', Times, serif;
+  font-weight: normal;
+  text-align: center;
+}
+
+body {
+  background-color: navy;
+  color: gold;
+}
+
+h1, h2, h3 {
+  text-transform: uppercase;
+  text-align: center;
+  margin-block: 0.5rem;
+}
+
+h2 {
+  font-size: 1rem;
+}
+
 fieldset {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: .5rem;
+  /* display: flex; */
+  /* flex-direction: row;
+  flex-wrap: wrap; */
+  /* gap: .5rem; */
+  /* align-items: center;
+  justify-content: center; */
+  border: solid gold 1px;
+  text-align: center;
+  line-height: 2rem;
+}
+
+/* For narrower screens, we want everything to go vertically instead of horizontally */
+@media (max-width: 600px) {
+  fieldset {
+    flex-direction: column;
+  }
+}
+
+/* For super wide screens, we want everything to be no wider than 800px and centered */
+@media (min-width: 1200px) {
+  body {
+    max-width: 800px;
+    margin-inline: auto;
+  }
 }
 
 input[type="date"] {
-  flex: 1;
+  /* flex: 1; */
+  display: inline-block;
+  font-size: .75rem;
+}
+
+input[type="submit"] {
+  background-color: gold;
+  color: navy;
+  border: 1px solid gold;
+  font-size: .75rem;
+  cursor: pointer;
+  margin-top: .5rem;
 }
 
 #results {
