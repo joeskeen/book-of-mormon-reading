@@ -36,10 +36,10 @@ function valueAsDate(value) {
 }
 
 function dateAsValue(date) {
-  return date.toString();
+  return date.toISOString().split("T")[0];
 }
 
-function formatDate(date) {
+function formatDateForDisplay(date) {
   return date.toLocaleString("en-US", {
     weekday: "short", // "Sat"
     month: "long", // "June"
@@ -86,10 +86,11 @@ function onSubmit(e) {
 
     // if the start date is after the end date, swap them
     if (startDate > endDate) {
-      elements.endDate.value = dateAsValue(startDate);
-      elements.startDate.value = dateAsValue(endDate);
+      const temp = startDate;
       startDate = endDate;
-      endDate = valueAsDate(elements.startDate.value);
+      endDate = temp;
+      elements.endDate.value = dateAsValue(endDate);
+      elements.startDate.value = dateAsValue(startDate);
     }
 
     // save the dates to local storage
@@ -104,13 +105,17 @@ function onSubmit(e) {
     const TOTAL_PAGES = bookOfMormon.totalPages;
     const ppd = TOTAL_PAGES / days;
 
-    results.innerText = `To read the Book of Mormon between \n${formatDate(
+    results.innerText = `To read the Book of Mormon between \n${formatDateForDisplay(
       startDate
-    )} and \n${formatDate(
+    )} and \n${formatDateForDisplay(
       endDate
     )} \n(${days} days),\n you will need to read ${Math.ceil(
       ppd
     )} pages per day.`;
+
+    if (now < startDate || now > endDate) {
+      return;
+    }
 
     // calculate what page you should be on today
     const currentDay = Math.ceil(
@@ -120,6 +125,9 @@ function onSubmit(e) {
 
     results.innerText += `\nToday you should be at about page ${currentPage}`;
 
+    console.info({
+      results: results.innerText
+    })
     // calculate the chapter you should be on today
     const readChapters = bookOfMormon.chapters.sort((a,b) => a.page - b.page).filter(c => c.page <= currentPage);
     const currentChapter = readChapters[readChapters.length - 1];
