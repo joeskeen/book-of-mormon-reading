@@ -1,28 +1,27 @@
 <html>
-<head>
-  <base href="./"/>
-  <title>The Book of Mormon Reading Program Helper</title>
-  <link rel="stylesheet" href="font/font.css"/>
-  <link rel="stylesheet" href="index.css"/>
-</head>
-<body>
-  <h1>The Book of Mormon</h1>
-  <h2>Reading Program Helper</h2>
-  <form onsubmit="onSubmit(event)">
-  <fieldset>
-    <label for="startDate">Start Date:</label>
-    <input id="startDate" type="date" required /><br />
+  <head>
+    <base href="./" />
+    <title>The Book of Mormon Reading Program Helper</title>
+    <link rel="stylesheet" href="font/font.css" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <h1>The Book of Mormon</h1>
+    <h2>Reading Program Helper</h2>
+    <form onsubmit="onSubmit(event)">
+      <fieldset>
+        <label for="startDate">Start Date:</label>
+        <input id="startDate" type="date" required /><br />
 
-    <label for="endDate">End Date:</label>
-    <input id="endDate" type="date" required /><br />
+        <label for="endDate">End Date:</label>
+        <input id="endDate" type="date" required /><br />
 
-   <input type="submit" value="Submit"/>
-  </fieldset>
-  </form>
-  
-  <section id="results">
-  </section>
+        <input type="submit" value="Submit" />
+      </fieldset>
+    </form>
 
-  <script src="index.js"></script>
-</body>
+    <section id="results"></section>
+
+    <script src="index.js" type="module"></script>
+  </body>
 </html>
