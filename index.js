@@ -24,7 +24,6 @@ globalThis.onSubmit = onSubmit;
 
 try {
   loadDates();
-  console.info("Done loading");
 } catch (err) {
   handleError(err);
 }
@@ -125,9 +124,6 @@ function onSubmit(e) {
 
     results.innerText += `\nToday you should be at about page ${currentPage}`;
 
-    console.info({
-      results: results.innerText
-    })
     // calculate the chapter you should be on today
     const readChapters = bookOfMormon.chapters.sort((a,b) => a.page - b.page).filter(c => c.page <= currentPage);
     const currentChapter = readChapters[readChapters.length - 1];
