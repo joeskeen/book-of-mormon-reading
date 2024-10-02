@@ -1,5 +1,7 @@
 import bookOfMormon from "./book-of-mormon.json" with { type: "json" };
 
+document.getElementById("noFirefox").remove();
+
 /**
  * elements on the page
  * @type {{startDate: HTMLInputElement, endDate: HTMLInputElement, results: HTMLElement}}
